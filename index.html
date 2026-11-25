@@ -1,46 +1,161 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="pt-BR" class="x-default-marker theme light classic x6brqfx x1yowkxt x19aimcq">
+<html lang="pt-BR" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cópia de Plataforma de metas e ODS</title>
-
-  <meta name="app-name" content="export_website">
-  <meta name="build-version" content="e03034157ed7ceb612744a418b4bfd9d5a1ed31b">
-  <meta name="build-release-name" content="20261123-22-e030341">
-  <meta name="build-deployment-group" content="STABLE">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta property="og:title" content="Cópia de Plataforma de metas e ODS">
-  <meta property="og:type" content="website">
-
-  <!-- Ícones da pasta _assets -->
-  <link rel="shortcut icon" href="_assets/images/2d0b56e7e51cf11036ad8734bdb67e2d.png">
-  <link rel="icon" href="_assets/images/e53c4bd8da5e491d9ab09e7cf0daf874.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="_assets/images/725b756a69a7d4c235070e51acd85560.png" sizes="180x180">
-
-  <!-- CSS principal (importa os estilos de _assets) -->
+  <title>Plataforma de Metas e ODS</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Pré-carregamento dos scripts de _assets -->
-  <link rel="preload" as="script" href="_assets/9ffbc34028c16617.runtime.js?br=1">
-  <link rel="preload" as="script" href="_assets/98be78a8f77ca51f.s4le6a.vendor.js?br=1">
-  <link rel="preload" as="script" href="_assets/9822c32ec6b4bff7.vendor.js?br=1">
-  <link rel="preload" as="script" href="_assets/00171d49368e171f.strings.js">
-  <link rel="preload" as="script" href="_assets/5253f6220b7acde2.pt-BR.js">
-  <link rel="preload" as="script" href="_assets/c3698a5112bd4589.js?br=1">
 </head>
 <body>
-  <div id="root"></div>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true">ODS</div>
+        <div>
+          <h1>Plataforma de Metas e ODS</h1>
+          <p class="subtitle">Agenda 2030 • Monitoramento de Objetivos de Desenvolvimento Sustentável</p>
+        </div>
+      </div>
 
-  <!-- 1º: Carrega as configurações, fontes e o caminho do embed de _assets -->
-  <script src="script.js"></script>
+      <div class="topbar-actions">
+        <button id="themeToggle" class="btn btn-secondary" type="button" aria-label="Alternar tema claro ou escuro">
+          <span id="themeIcon">🌙</span>
+          <span id="themeLabel">Modo Escuro</span>
+        </button>
+        <button id="openGoalModalBtn" class="btn btn-primary" type="button">
+          + Nova Meta
+        </button>
+      </div>
+    </div>
+  </header>
 
-  <!-- 2º: Carrega os scripts principais da pasta _assets -->
-  <script src="_assets/9ffbc34028c16617.runtime.js?br=1" defer></script>
-  <script src="_assets/98be78a8f77ca51f.s4le6a.vendor.js?br=1" defer></script>
-  <script src="_assets/9822c32ec6b4bff7.vendor.js?br=1" defer></script>
-  <script src="_assets/00171d49368e171f.strings.js"></script>
-  <script src="_assets/5253f6220b7acde2.pt-BR.js"></script>
-  <script src="_assets/c3698a5112bd4589.js?br=1" defer></script>
+  <main class="container">
+    <!-- Painel de Indicadores -->
+    <section class="stats-grid" aria-label="Resumo de indicadores">
+      <article class="stat-card">
+        <span class="stat-label">Total de Metas</span>
+        <strong id="statTotal" class="stat-value">0</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Metas Concluídas</span>
+        <strong id="statCompleted" class="stat-value success">0</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Progresso Médio</span>
+        <strong id="statAverage" class="stat-value">0%</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">ODS Contemplados</span>
+        <strong id="statSdgs" class="stat-value">0 / 17</strong>
+      </article>
+    </section>
+
+    <!-- Navegação entre Abas -->
+    <nav class="tabs" aria-label="Seções da plataforma">
+      <button class="tab-btn active" data-tab="metas" type="button">Minhas Metas e Ações</button>
+      <button class="tab-btn" data-tab="ods" type="button">Os 17 ODS da ONU</button>
+    </nav>
+
+    <!-- Aba 1: Gestão de Metas -->
+    <section id="tab-metas" class="tab-panel active">
+      <div class="filters-bar">
+        <input
+          type="search"
+          id="searchInput"
+          class="input"
+          placeholder="Buscar meta por título ou descrição..."
+          aria-label="Buscar meta"
+        >
+        <select id="odsFilter" class="select" aria-label="Filtrar por ODS">
+          <option value="all">Todos os ODS</option>
+        </select>
+        <select id="statusFilter" class="select" aria-label="Filtrar por status">
+          <option value="all">Todos os status</option>
+          <option value="progress">Em andamento</option>
+          <option value="completed">Concluídas</option>
+        </select>
+      </div>
+
+      <div id="goalsContainer" class="goals-grid"></div>
+    </section>
+
+    <!-- Aba 2: Catálogo dos 17 ODS -->
+    <section id="tab-ods" class="tab-panel" hidden>
+      <p class="section-intro">
+        Clique em qualquer um dos 17 Objetivos de Desenvolvimento Sustentável para visualizar suas metas oficiais da Agenda 2030 e vincular novas ações.
+      </p>
+      <div id="sdgGrid" class="sdg-grid"></div>
+    </section>
+  </main>
+
+  <!-- Modal: Criar Nova Meta -->
+  <div id="goalModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="goalModalTitle" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="goalModalTitle">Cadastrar Nova Meta</h2>
+        <button id="closeGoalModalBtn" class="icon-btn" type="button" aria-label="Fechar janela">&times;</button>
+      </div>
+
+      <form id="goalForm" class="modal-form">
+        <label class="field">
+          <span>Objetivo de Desenvolvimento Sustentável (ODS) *</span>
+          <select id="goalOdsSelect" class="select" required></select>
+        </label>
+
+        <label class="field">
+          <span>Título da Meta *</span>
+          <input type="text" id="goalTitleInput" class="input" placeholder="Ex: Reduzir consumo de plástico em 50%" required>
+        </label>
+
+        <label class="field">
+          <span>Descrição / Plano de Ação</span>
+          <textarea id="goalDescInput" class="textarea" rows="3" placeholder="Descreva como esta meta será alcançada e medida..."></textarea>
+        </label>
+
+        <div class="form-row">
+          <label class="field">
+            <span>Prazo previsto *</span>
+            <input type="date" id="goalDeadlineInput" class="input" required>
+          </label>
+
+          <label class="field">
+            <span>Progresso inicial (<span id="initialProgressLabel">0%</span>)</span>
+            <input type="range" id="goalProgressInput" min="0" max="100" value="0">
+          </label>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="cancelGoalBtn" class="btn btn-secondary">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar Meta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Detalhes do ODS -->
+  <div id="sdgModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="sdgModalTitle" hidden>
+    <div class="modal-card">
+      <div id="sdgModalBanner" class="sdg-modal-banner">
+        <div>
+          <span id="sdgModalNumber" class="sdg-modal-number">ODS 1</span>
+          <h2 id="sdgModalTitle">Título do ODS</h2>
+        </div>
+        <button id="closeSdgModalBtn" class="icon-btn light" type="button" aria-label="Fechar janela">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p id="sdgModalDesc" class="sdg-modal-desc"></p>
+        <h3>Principais Metas da Agenda 2030:</h3>
+        <ul id="sdgModalTargets" class="targets-list"></ul>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" id="closeSdgFooterBtn" class="btn btn-secondary">Fechar</button>
+        <button type="button" id="createFromSdgBtn" class="btn btn-primary">+ Criar meta neste ODS</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
