@@ -13,29 +13,34 @@
   <meta property="og:title" content="Cópia de Plataforma de metas e ODS">
   <meta property="og:type" content="website">
 
+  <!-- Ícones da pasta _assets -->
   <link rel="shortcut icon" href="_assets/images/2d0b56e7e51cf11036ad8734bdb67e2d.png">
   <link rel="icon" href="_assets/images/e53c4bd8da5e491d9ab09e7cf0daf874.png" sizes="192x192">
   <link rel="apple-touch-icon" href="_assets/images/725b756a69a7d4c235070e51acd85560.png" sizes="180x180">
 
+  <!-- CSS principal (importa os estilos de _assets) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Pré-carregamento dos scripts de _assets -->
   <link rel="preload" as="script" href="_assets/9ffbc34028c16617.runtime.js?br=1">
   <link rel="preload" as="script" href="_assets/98be78a8f77ca51f.s4le6a.vendor.js?br=1">
   <link rel="preload" as="script" href="_assets/9822c32ec6b4bff7.vendor.js?br=1">
   <link rel="preload" as="script" href="_assets/00171d49368e171f.strings.js">
   <link rel="preload" as="script" href="_assets/5253f6220b7acde2.pt-BR.js">
   <link rel="preload" as="script" href="_assets/c3698a5112bd4589.js?br=1">
-
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="root"></div>
 
+  <!-- 1º: Carrega as configurações, fontes e o caminho do embed de _assets -->
+  <script src="script.js"></script>
+
+  <!-- 2º: Carrega os scripts principais da pasta _assets -->
   <script src="_assets/9ffbc34028c16617.runtime.js?br=1" defer></script>
   <script src="_assets/98be78a8f77ca51f.s4le6a.vendor.js?br=1" defer></script>
   <script src="_assets/9822c32ec6b4bff7.vendor.js?br=1" defer></script>
   <script src="_assets/00171d49368e171f.strings.js"></script>
   <script src="_assets/5253f6220b7acde2.pt-BR.js"></script>
   <script src="_assets/c3698a5112bd4589.js?br=1" defer></script>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
