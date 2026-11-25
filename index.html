@@ -1,161 +1,248 @@
+<!doctype html>
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plataforma de Metas e ODS</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+
+<html lang="pt-BR">
+<head><script src="script.js"></script><script integrity="sha512-8fK1FJkMKhG3BvdrPKKQIuxMbZe7zKN/VGFUuF0NaJbKIrsGyl9nqbLdmGibxHDac9HOwLp0nBqxhX9UpzuJlQ==" src="/_sdk/0174599a6a59d679.telemetry_sdk.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Conecta ODS — Metas que movem o futuro</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
+
+<script integrity="sha512-/mzxa459qqFtJ+3zVo1SrEfPBeA3N/1qyd1xQiMsOJYiGSyYcFhqn79DaV8lbrFwJURsFyIdrdQms9lzsNzptA==" src="/_sdk/9004216d282a9ba4.data_sdk.js" type="text/javascript"></script>
+<script integrity="sha512-+i8UqZoLJafKFo2hLASVxyPgXjPGDHqTbMKFge2vXfp6axm9knghh+474gc250CGH9YxpI5zViZ0NNqgNphvVg==" src="/_sdk/da84da91ddc761f8.editing_sdk.js" type="text/javascript"></script>
+<script integrity="sha512-YCuZjcsaDrRKHi2y0lK29k33QUHuYdRvI3vb9gbuE6sP1BLzsGuZTnVPXUYiRfkdcIhUfFh9aNNDS/VnRcAYWQ==" src="/_sdk/b8467a1645732b5c.resizing_sdk.js" type="text/javascript"></script>
+<link href="style.css" rel="stylesheet"/></head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand">
-        <div class="brand-badge" aria-hidden="true">ODS</div>
-        <div>
-          <h1>Plataforma de Metas e ODS</h1>
-          <p class="subtitle">Agenda 2030 • Monitoramento de Objetivos de Desenvolvimento Sustentável</p>
-        </div>
-      </div>
-
-      <div class="topbar-actions">
-        <button id="themeToggle" class="btn btn-secondary" type="button" aria-label="Alternar tema claro ou escuro">
-          <span id="themeIcon">🌙</span>
-          <span id="themeLabel">Modo Escuro</span>
-        </button>
-        <button id="openGoalModalBtn" class="btn btn-primary" type="button">
-          + Nova Meta
-        </button>
-      </div>
+<main class="welcome canva-section" id="welcome-screen">
+<section aria-labelledby="welcome-title" class="welcome-visual canva-section">
+<div class="brand">
+<span class="brand-mark"><i data-lucide="sprout"></i></span> conecta<span style="color:#d5f477">ods.</span>
+</div>
+<div class="visual-content">
+<div class="eyebrow">Impacto que se acompanha</div>
+<h1 id="welcome-title">Grandes mudanças começam com <em>metas claras.</em></h1>
+<p>Organize seus objetivos, acompanhe cada avanço e conecte sua instituição a ideias que transformam o mundo.</p>
+</div>
+<div class="visual-foot" style="color:#b8cfbd;letter-spacing:0.002em;font-size:12px;line-height:1.333;line-height:round(down, 1.333em, 1px);font-family:'YAD1aU3sLnI,0','DM Sans',sans-serif">
+<canva-richtext style="display:contents"><span style="font-kerning:normal">Uma plataforma pensada para o desenvolvimento sustentável </span><span style="font-kerning:normal">de</span><span style="white-space:pre-wrap;font-kerning:normal"> </span>
+<br/>
+<span style="text-align:start;direction:ltr"><span style="font-kerning:normal">escolas, faculdades e empresas.</span></span></canva-richtext>
+</div>
+<div aria-hidden="true" class="orb" style="border-color:#c1ff72ff">
+<img alt="Vista aérea de uma floresta verde e exuberante" class="canva-image" id="welcome-nature-image" loading="lazy" src="https://images.pexels.com/photos/17032447/pexels-photo-17032447.jpeg" style="position:absolute;inset:112px;width:calc(100% - 224px);height:calc(100% - 224px);object-fit:cover;border-radius:50%;opacity:.28"/>
+</div>
+</section>
+<section aria-labelledby="access-title" class="welcome-panel canva-section">
+<div class="welcome-inner">
+<span class="pill canva-tag" style="color:#3d6d42;text-align:start;direction:ltr;font-size:12px;line-height:1.333;line-height:round(down, 1.333em, 1px);font-family:'YAD1aU3sLnI,0','DM Sans',sans-serif"><canva-richtext style="display:contents"><span style="white-space:pre-wrap;font-weight:700;font-kerning:normal"> </span><span style="font-weight:700;font-kerning:normal">projeto</span><span style="font-weight:700;font-kerning:normal"> teste 1</span></canva-richtext></span>
+<h2 id="access-title">Seu impacto, em uma só plataforma.</h2>
+<p class="subtle">Explore o painel usando o perfil institucional fictício abaixo. Este acesso não utiliza senha nem autenticação.</p>
+<div class="profile canva-card">
+<div class="profile-head">
+<span class="avatar">AV</span>
+<div>
+<strong>Instituto Amanhã Verde</strong><small>Perfil fictício de demonstração</small>
+</div>
+</div>
+<div class="profile-row">
+<span>Nome</span><span>Instituto Amanhã Verde</span>
+</div>
+<div class="profile-row">
+<span>E-mail</span><span>contato@amanhaverde.exemplo</span>
+</div>
+<div class="profile-row">
+<span>CNPJ</span><span>00.000.000/0000-00</span>
+</div>
+</div>
+<button class="primary canva-button" id="enter-button" type="button">Abrir painel de metas <i data-lucide="arrow-right"></i></button>
+<p class="fineprint">Dados do perfil meramente ilustrativos.</p>
+</div>
+</section>
+</main>
+<div class="app" id="dashboard-app">
+<aside class="sidebar canva-sidebar">
+<div class="brand">
+<span class="brand-mark"><i data-lucide="sprout"></i></span> conecta<span style="color:#d5f477">ods.</span>
+</div>
+<nav aria-label="Navegação principal">
+<button class="nav-btn active canva-button" data-view="overview" type="button"><i data-lucide="layout-dashboard"></i> Visão geral</button><button class="nav-btn canva-button" data-view="goals" type="button"><i data-lucide="target"></i> Metas e ODS</button><button class="nav-btn canva-button" data-view="community" type="button"><i data-lucide="users-round"></i> Comunidade</button>
+</nav>
+<div class="side-bottom">
+     Juntos por um futuro mais sustentável.
+     <br/>
+     Agenda 2030 • 17 objetivos
     </div>
-  </header>
+</aside>
+<main class="workspace canva-container">
+<header class="topbar canva-header">
+<span class="breadcrumb" id="breadcrumb">Painel / Visão geral</span>
+<div class="top-right">
+<span>Instituto Amanhã Verde</span><span class="mini-avatar">AV</span>
+</div>
+</header>
+<div aria-live="polite" class="status" id="global-status" role="status"></div>
+<section class="section active canva-section" id="overview">
+<div class="page-heading">
+<div>
+<div class="eyebrow" style="color:#67945b">SEU PAINEL DE IMPACTO</div>
+<h1>Visão geral</h1>
+<p>Acompanhe o que sua instituição está construindo.</p>
+</div>
+<button class="primary canva-button" data-jump="goals" type="button"><i data-lucide="plus"></i> Nova meta</button>
+</div>
+<div class="stats">
+<article class="card canva-card">
+<span class="stat-icon"><i data-lucide="target"></i></span>
+<div class="stat-label">Metas cadastradas</div>
+<div class="stat-value" id="stat-goals">0</div>
+<div class="stat-note">Objetivos em acompanhamento</div>
+</article>
+<article class="card canva-card">
+<span class="stat-icon"><i data-lucide="globe-2"></i></span>
+<div class="stat-label">ODS contemplados</div>
+<div class="stat-value" id="stat-ods">
+        0 <small style="font-size:15px;color:#a1ada1">/ 17</small>
+</div>
+<div class="stat-note">Áreas de impacto trabalhadas</div>
+</article>
+<article class="card canva-card">
+<span class="stat-icon"><i data-lucide="trending-up"></i></span>
+<div class="stat-label">Progresso médio</div>
+<div class="stat-value" id="stat-progress">0%</div>
+<div class="stat-note">Média das metas cadastradas</div>
+</article>
+</div>
+<div class="overview-grid">
+<article class="card canva-card">
+<div class="section-title">
+<h2>Metas em destaque</h2>
+<button class="text-button canva-button" data-jump="goals" type="button">Ver todas →</button>
+</div>
+<div id="goal-preview">
+<div class="loading">Carregando metas…</div>
+</div>
+</article>
+<article class="card feature-card canva-card">
+<div class="eyebrow">CONEXÕES QUE TRANSFORMAM</div>
+<h2>Ideias melhores nascem quando são compartilhadas.</h2>
+<p>Descubra iniciativas, inspire outras instituições e compartilhe o que funciona.</p>
+<button class="canva-button" data-jump="community" type="button">Explorar comunidade →</button>
+<div aria-hidden="true" class="feature-decoration">
+<img alt="Vista aérea de uma horta comunitária urbana" class="canva-image" id="community-garden-image" loading="lazy" src="https://images.pexels.com/photos/17846380/pexels-photo-17846380.jpeg" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;opacity:.65"/>
+</div>
+</article>
+</div>
+</section>
+<section class="section canva-section" id="goals">
+<div class="page-heading">
+<div>
+<div class="eyebrow" style="color:#67945b">PLANEJAR • MEDIR • EVOLUIR</div>
+<h1>Metas e ODS</h1>
+<p>Sua planilha de objetivos, sempre atualizada.</p>
+</div>
+</div>
+<div class="toolbar">
+<div class="searchbox">
+<i data-lucide="search"></i><input aria-label="Pesquisar metas" class="canva-input" id="goal-search" placeholder="Pesquisar metas…" type="search"/>
+</div>
+<select aria-label="Filtrar por ODS" class="field canva-dropdown" id="ods-filter"><option value="">Todos os ODS</option></select>
+</div>
+<div class="table-wrap canva-table">
+<table>
+<thead>
+<tr>
+<th>Meta</th>
+<th>ODS</th>
+<th>Planejado</th>
+<th>Alcançado</th>
+<th>Progresso</th>
+<th>Prazo</th>
+<th>Ações</th>
+</tr>
+</thead>
+<tbody id="goals-body">
+<tr>
+<td class="loading" colspan="7">Carregando planilha…</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="subtle" style="font-size:12px;margin:10px 0">Edite o valor alcançado diretamente na tabela e clique em Salvar. Limite de 999 registros compartilhados.</p>
+<article class="card form-card canva-card">
+<h2 id="goal-form-title">Adicionar nova meta</h2>
+<p class="subtle" style="font-size:13px">Defina um resultado mensurável para acompanhar sua evolução.</p>
+<form id="goal-form">
+<div class="form-grid">
+<div class="form-field full">
+<label for="goal-title">Título da meta</label><input class="field canva-input" id="goal-title" maxlength="100" placeholder="Ex.: Reduzir o consumo de energia" required=""/>
+</div>
+<div class="form-field">
+<label for="goal-ods">ODS relacionado</label><select class="field canva-dropdown" id="goal-ods" required=""></select>
+</div>
+<div class="form-field">
+<label for="goal-unit">Unidade de medida</label><input class="field canva-input" id="goal-unit" maxlength="30" placeholder="Ex.: kWh, pessoas, ações" required=""/>
+</div>
+<div class="form-field">
+<label for="goal-target">Valor planejado</label><input class="field canva-input" id="goal-target" min="0.01" placeholder="100" required="" step="any" type="number"/>
+</div>
+<div class="form-field">
+<label for="goal-achieved">Valor alcançado</label><input class="field canva-input" id="goal-achieved" min="0" required="" step="any" type="number" value="0"/>
+</div>
+<div class="form-field">
+<label for="goal-due">Prazo</label><input class="field canva-input" id="goal-due" required="" type="date"/>
+</div>
+<div class="form-field full">
+<label for="goal-description">Descrição (opcional)</label><textarea class="field canva-input" id="goal-description" maxlength="500" placeholder="Conte como sua instituição pretende atingir esta meta."></textarea>
+</div>
+</div>
+<div class="form-actions">
+<button class="primary canva-button" id="goal-submit" type="submit">Salvar meta</button><button class="secondary canva-button" hidden="" id="cancel-edit" type="button">Cancelar edição</button>
+</div>
+</form>
+</article>
+</section>
+<section class="section canva-section" id="community">
+<div class="page-heading">
+<div>
+<div class="eyebrow" style="color:#67945b">COMPARTILHAR PARA MULTIPLICAR</div>
+<h1>Comunidade</h1>
+<p>Um espaço aberto para trocar ideias e objetivos entre instituições.</p>
+</div>
+</div>
+<div class="community-grid">
+<article class="card form-card canva-card">
+<h2>Compartilhe uma ideia</h2>
+<p class="subtle" style="font-size:13px">Uma iniciativa sua pode inspirar outras organizações.</p>
+<form id="post-form">
+<div class="form-grid" style="grid-template-columns:1fr">
+<div class="form-field">
+<label for="post-title">Título</label><input class="field canva-input" id="post-title" maxlength="100" placeholder="Ex.: Horta comunitária no campus" required=""/>
+</div>
+<div class="form-field">
+<label for="post-ods">ODS relacionado</label><select class="field canva-dropdown" id="post-ods" required=""></select>
+</div>
+<div class="form-field">
+<label for="post-description">Sua ideia ou objetivo</label><textarea class="field canva-input" id="post-description" maxlength="600" placeholder="Conte sua experiência…" required=""></textarea>
+</div>
+</div>
+<button class="primary canva-button" id="post-submit" type="submit"><i data-lucide="send"></i> Publicar ideia</button>
+</form>
+</article>
+<div>
+<div class="section-title">
+<h2>Ideias compartilhadas</h2>
+</div>
+<div class="posts" id="post-list">
+<div class="loading">Carregando comunidade…</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
 
-  <main class="container">
-    <!-- Painel de Indicadores -->
-    <section class="stats-grid" aria-label="Resumo de indicadores">
-      <article class="stat-card">
-        <span class="stat-label">Total de Metas</span>
-        <strong id="statTotal" class="stat-value">0</strong>
-      </article>
-      <article class="stat-card">
-        <span class="stat-label">Metas Concluídas</span>
-        <strong id="statCompleted" class="stat-value success">0</strong>
-      </article>
-      <article class="stat-card">
-        <span class="stat-label">Progresso Médio</span>
-        <strong id="statAverage" class="stat-value">0%</strong>
-      </article>
-      <article class="stat-card">
-        <span class="stat-label">ODS Contemplados</span>
-        <strong id="statSdgs" class="stat-value">0 / 17</strong>
-      </article>
-    </section>
-
-    <!-- Navegação entre Abas -->
-    <nav class="tabs" aria-label="Seções da plataforma">
-      <button class="tab-btn active" data-tab="metas" type="button">Minhas Metas e Ações</button>
-      <button class="tab-btn" data-tab="ods" type="button">Os 17 ODS da ONU</button>
-    </nav>
-
-    <!-- Aba 1: Gestão de Metas -->
-    <section id="tab-metas" class="tab-panel active">
-      <div class="filters-bar">
-        <input
-          type="search"
-          id="searchInput"
-          class="input"
-          placeholder="Buscar meta por título ou descrição..."
-          aria-label="Buscar meta"
-        >
-        <select id="odsFilter" class="select" aria-label="Filtrar por ODS">
-          <option value="all">Todos os ODS</option>
-        </select>
-        <select id="statusFilter" class="select" aria-label="Filtrar por status">
-          <option value="all">Todos os status</option>
-          <option value="progress">Em andamento</option>
-          <option value="completed">Concluídas</option>
-        </select>
-      </div>
-
-      <div id="goalsContainer" class="goals-grid"></div>
-    </section>
-
-    <!-- Aba 2: Catálogo dos 17 ODS -->
-    <section id="tab-ods" class="tab-panel" hidden>
-      <p class="section-intro">
-        Clique em qualquer um dos 17 Objetivos de Desenvolvimento Sustentável para visualizar suas metas oficiais da Agenda 2030 e vincular novas ações.
-      </p>
-      <div id="sdgGrid" class="sdg-grid"></div>
-    </section>
-  </main>
-
-  <!-- Modal: Criar Nova Meta -->
-  <div id="goalModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="goalModalTitle" hidden>
-    <div class="modal-card">
-      <div class="modal-header">
-        <h2 id="goalModalTitle">Cadastrar Nova Meta</h2>
-        <button id="closeGoalModalBtn" class="icon-btn" type="button" aria-label="Fechar janela">&times;</button>
-      </div>
-
-      <form id="goalForm" class="modal-form">
-        <label class="field">
-          <span>Objetivo de Desenvolvimento Sustentável (ODS) *</span>
-          <select id="goalOdsSelect" class="select" required></select>
-        </label>
-
-        <label class="field">
-          <span>Título da Meta *</span>
-          <input type="text" id="goalTitleInput" class="input" placeholder="Ex: Reduzir consumo de plástico em 50%" required>
-        </label>
-
-        <label class="field">
-          <span>Descrição / Plano de Ação</span>
-          <textarea id="goalDescInput" class="textarea" rows="3" placeholder="Descreva como esta meta será alcançada e medida..."></textarea>
-        </label>
-
-        <div class="form-row">
-          <label class="field">
-            <span>Prazo previsto *</span>
-            <input type="date" id="goalDeadlineInput" class="input" required>
-          </label>
-
-          <label class="field">
-            <span>Progresso inicial (<span id="initialProgressLabel">0%</span>)</span>
-            <input type="range" id="goalProgressInput" min="0" max="100" value="0">
-          </label>
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" id="cancelGoalBtn" class="btn btn-secondary">Cancelar</button>
-          <button type="submit" class="btn btn-primary">Salvar Meta</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Modal: Detalhes do ODS -->
-  <div id="sdgModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="sdgModalTitle" hidden>
-    <div class="modal-card">
-      <div id="sdgModalBanner" class="sdg-modal-banner">
-        <div>
-          <span id="sdgModalNumber" class="sdg-modal-number">ODS 1</span>
-          <h2 id="sdgModalTitle">Título do ODS</h2>
-        </div>
-        <button id="closeSdgModalBtn" class="icon-btn light" type="button" aria-label="Fechar janela">&times;</button>
-      </div>
-
-      <div class="modal-body">
-        <p id="sdgModalDesc" class="sdg-modal-desc"></p>
-        <h3>Principais Metas da Agenda 2030:</h3>
-        <ul id="sdgModalTargets" class="targets-list"></ul>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" id="closeSdgFooterBtn" class="btn btn-secondary">Fechar</button>
-        <button type="button" id="createFromSdgBtn" class="btn btn-primary">+ Criar meta neste ODS</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
